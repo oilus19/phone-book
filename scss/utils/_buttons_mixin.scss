@@ -1,0 +1,148 @@
+/**
+ * mixin for button
+ * @type string   $style      [flat, outline]
+ * @type string   $shadow     shadow css
+ * @type string   $color      text color
+ * @type string   $bg         background color
+ * @type string   $bg-hover   background hover color
+ * @type string   $bg-active  background active color
+ * @type integer  $font-size  font size
+ * @type integer  $padding-v  vertical padding
+ * @type integer  $padding-h  horizontal padding
+ */
+@mixin button($style: flat, $shadow: 0 0 12px 0 $black02, $color: $white, $bg: $color-secondary, $bg-hover: $color-secondary-light, $bg-active: $color-secondary-dark, $font-size: 18, $padding-v: 15, $padding-h: 30) {
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  box-shadow: $shadow;
+  transition: all 0.1s ease;
+  font-weight: $font-weight-medium;
+  line-height: 1em;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+    text-decoration: none;
+  }
+  
+  &:active,
+  &.active {
+    transform: none;
+    
+    &:hover,
+    &:focus,
+    &.focus {
+      transform: none;
+    }
+  }
+  
+  @include button-size($font-size, $padding-v, $padding-h);
+  
+  @if $style == outline {
+    @include button-variant-outline($bg, $bg, $color, $bg-hover, $bg-hover, $color, $bg-active, $bg-active);
+  } @else {
+    @include button-variant($color, $bg, $bg-hover, $bg-active);
+  }
+}
+
+@mixin button-variant($color, $background, $background-hover, $background-active) {
+  color: $color;
+  background-color: $background;
+  border-color: transparent;
+  
+  &:focus,
+  &.focus {
+    color: $color;
+    border-color: transparent;
+  }
+  
+  &:hover {
+    color: $color;
+    background-color: $background-hover;
+    border-color: transparent;
+  }
+  
+  &:active,
+  &.active {
+    background-color: $background-active;
+    border-color: transparent;
+    
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $background-active;
+    }
+  }
+  
+  &.disabled,
+  &[disabled] {
+    @include button-disabled($white, $black015);
+  }
+}
+
+@mixin button-variant-outline($color, $border, $color-hover, $background-hover, $border-hover, $color-active, $background-active, $border-active) {
+  color: $color;
+  border-color: $border;
+  box-shadow: none;
+  background-color: transparent;
+
+  &:focus,
+  &.focus,
+  &:hover {
+    transform: none;
+    color: $color-hover;
+    background-color: $background-hover;
+    border-color: $border-hover;
+  }
+
+  &:active,
+  &.active {
+    color: $color-active;
+    background-color: $background-active;
+    border-color: $border-active;
+    
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color-active;
+      background-color: $background-active;
+      border-color: $border-active;
+    }
+  }
+  
+  &.disabled,
+  &[disabled] {
+    @include button-disabled($white, $black015);
+  }
+}
+
+@mixin button-size($font-size, $top-padding, $left-padding) {
+  padding: em($top-padding,$font-size) em($left-padding,$font-size);
+  font-size: rem($font-size);
+}
+
+@mixin button-disabled($color, $background) {
+  color: $color;
+  background-color: $background;
+  border-color: transparent;
+  box-shadow: none;
+  cursor: not-allowed;
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    color: $color;
+    background-color: $background;
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
+  }
+}
+
+@mixin button-block {
+  display: block;
+  width: 100%;
+}

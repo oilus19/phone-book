@@ -1,0 +1,74 @@
+/**
+ * mixin for body text
+ * @type string   $scale    [small, medium, large]
+ */
+@mixin body-type($scale) {
+  @include sans-serif-book;
+  @include body-type-scale($scale);
+}
+
+/**
+ * mixin for heading text
+ * @type string   $scale    [h1, h2, h3, h4, h5, h6]
+ */
+@mixin heading-type($scale) {
+  @include sans-serif-book;
+  @include heading-type-scale($scale);
+}
+
+@mixin link-type($color) {
+  color: $color;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+    border-bottom: 1px solid $color;
+  }
+}
+
+
+@mixin body-type-scale($scale, $map: $type-scale) {
+  font-size: rem(map-fetch($map, $scale font-size));
+  line-height: em(map-fetch($map, $scale line-height), map-fetch($map, $scale font-size));
+}
+
+@mixin heading-type-scale($scale, $map: $heading-type-scale) {
+  font-size: rem(map-fetch($map, $scale font-size));
+  line-height: em(map-fetch($map, $scale line-height), map-fetch($map, $scale font-size));
+}
+
+
+@mixin sans-serif-book {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-book;
+  font-style: $font-style-normal;
+}
+
+@mixin sans-serif-book-oblique {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-book;
+  font-style: $font-style-oblique;
+}
+
+@mixin sans-serif-medium {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-medium;
+  font-style: $font-style-normal;
+}
+
+@mixin sans-serif-medium-oblique {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-medium;
+  font-style: $font-style-oblique;
+}
+
+@mixin sans-serif-heavy {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-heavy;
+  font-style: $font-style-normal;
+}
+
+@mixin sans-serif-heavy-oblique {
+  font-family: $font-sans-serif;
+  font-weight: $font-weight-heavy;
+  font-style: $font-style-oblique;
+}

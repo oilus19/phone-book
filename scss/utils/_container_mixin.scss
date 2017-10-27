@@ -1,0 +1,10 @@
+/**
+ * mixin for container
+ */
+@mixin container {
+  background: $white;
+  border: 1px solid $black015;
+  box-shadow: 0 2px 2px 0 $black01;
+  border-radius: 2px;
+  padding: rem(30);
+}

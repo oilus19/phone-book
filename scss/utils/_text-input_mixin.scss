@@ -1,0 +1,75 @@
+/**
+ * mixin for text input
+ * @type string   $size   [xsmall, small, medium, large]
+ */
+@mixin input($size: small) {
+	@include sans-serif-book;
+  color: $black09;
+  width: 100%;
+  border-radius: 2px;
+  background-color: $white;
+  border: solid 1px $black03;
+	text-align: left;
+  outline: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  &:hover {
+    border-color: $black06;
+  }
+  &:focus {
+    border-color: $color-secondary;
+		box-shadow: 0 0 0 1px $color-secondary;
+  }
+	
+  &.disabled,
+  &[disabled] {
+		@include input-disabled;
+	}
+	
+  @include input-size($size);
+}
+
+@mixin input-size($size, $map: $input-size) {
+  font-size: rem(map-fetch($map, $size font-size));
+  line-height: em(map-fetch($map, $size line-height), map-fetch($map, $size font-size));
+  padding: em(map-fetch($map, $size padding-v) - 1, map-fetch($map, $size font-size)) em(map-fetch($map, $size padding-h), map-fetch($map, $size font-size));
+}
+
+@mixin input-placeholder() {
+  color: $black04;
+  @include sans-serif-book-oblique;
+}
+
+@mixin input-disabled() {
+  background: rgba-to-rgb($black01) !important;
+	border-color: $black03 !important;
+	box-shadow: none !important;
+  cursor: not-allowed !important;
+
+  &:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+    background: rgba-to-rgb($black01) !important;
+		border-color: $black03 !important;
+		box-shadow: none !important;
+  }
+}
+
+@mixin input-invalid() {
+	border-color: $color-danger;
+	box-shadow: 0 0 0 1px $color-danger;
+	
+	&:hover,
+  &:focus,
+  &.focus,
+  &:active,
+  &.active {
+		border-color: $color-danger;
+		box-shadow: 0 0 0 1px $color-danger;
+  }
+}

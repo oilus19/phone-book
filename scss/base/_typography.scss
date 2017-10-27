@@ -1,0 +1,47 @@
+body,
+html,
+& {
+	color: $black09;
+	@include body-type(small);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#{h1, h2, h3, h4, h5, h6}, .h1, .h2, .h3, .h4, .h5, .h6 {
+	color: $black09;
+	@include sans-serif-book;
+}
+
+h1, .h1 {
+	@include heading-type-scale(h1);
+}
+
+h2, .h2 {
+	@include heading-type-scale(h2);
+}
+
+h3, .h3 {
+	@include heading-type-scale(h3);
+}
+
+h4, .h4 {
+	@include heading-type-scale(h4);
+}
+
+h5, .h5 {
+	@include heading-type-scale(h5);
+}
+
+h6, .h6 {
+	@include heading-type-scale(h6);
+}
+
+p {
+	margin-bottom: 1.4em;
+}
+
+a {
+	&.link {
+		@include link-type($color-secondary);
+	}
+}

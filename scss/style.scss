@@ -1,0 +1,53 @@
+// VARIABLES
+@import "utils/_variables";
+
+// FUNCTIONS
+@import "utils/_functions";
+
+// MIXINS
+@import "utils/_bem_mixin";
+@import "utils/_typography_mixin";
+@import "utils/_buttons_mixin";
+@import "utils/_container_mixin";
+@import "utils/_text-input_mixin";
+
+// RESET/BASE CSS
+@import "base/_reset";
+@import "base/_typography";
+
+// COMPONENTS
+@import "components/_buttons";
+@import "components/_text-input";
+@import "components/_container";
+
+
+
+html {
+  font-size: 10px;
+  background: #f7faf8;
+}
+
+body {
+  width: rem(760);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: rem(100) 0;
+}
+
+.input {
+  margin-bottom: rem(15);
+}
+
+.container {
+  padding: rem(50);
+}
+
+.contact-item {
+  position: relative;
+  
+  .delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

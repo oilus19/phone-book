@@ -1,0 +1,11 @@
+/*
+Container
+
+HTML Markup:
+<div class="container" />
+
+Styleguide container
+ */
+.container {
+  @include container;
+}

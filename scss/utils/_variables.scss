@@ -1,0 +1,132 @@
+// TYPOGRAPHY
+$font-sans-serif: 'Avenir W01', sans-serif;
+$font-lora: 'Lora';
+$font-family-base: $font-sans-serif;
+$font-family-alt: $font-lora;
+$font-size-small: 18;
+$font-size-medium: 20;
+$font-size-large: 24;
+$font-weight-book: 300;
+$font-weight-medium: 500;
+$font-weight-heavy: 800;
+$font-style-normal: normal;
+$font-style-oblique: oblique; 
+// TYPOGRAPHY END
+
+// --- USE Color Intentions if possible
+// COLORS
+$secondary-blue: #008cfd;
+$secondary-blue-light: #1996fd;
+$secondary-blue-dark: #1076cd;
+$secondary-blue-09: rgba(0, 140, 253, 0.9);
+$secondary-blue-01: rgba(0, 140, 253, 0.1);
+$super-dark-blue: #21272e;
+$primary-green: #00ba69;
+$primary-green-light: #00c771;
+$primary-green-dark: #098c4f;
+$danger-red: #e14436;
+$danger-red-light: #ff4d3d;
+$danger-red-dark: #c73c2f;
+$black: #000000;
+$black09: rgba(0, 0, 0, 0.9);
+$black08: rgba(0, 0, 0, 0.8);
+$black07: rgba(0, 0, 0, 0.7);
+$black06: rgba(0, 0, 0, 0.6);
+$black05: rgba(0, 0, 0, 0.5);
+$black04: rgba(0, 0, 0, 0.4);
+$black03: rgba(0, 0, 0, 0.3);
+$black02: rgba(0, 0, 0, 0.2);
+$black015: rgba(0, 0, 0, 0.15);
+$black01: rgba(0, 0, 0, 0.1);
+$black004: rgba(0, 0, 0, 0.04);
+$grey-f5: #f5f5f5;
+$white03: rgba(255, 255, 255, 0.3);
+$white: #ffffff;
+$yellow: #fff366;
+// COLORS END
+
+// COLOR INTENTIONS
+// primary - used to represent primary interface elements for a user
+$color-primary: $primary-green;
+$color-primary-light: $primary-green-light;
+$color-primary-dark: $primary-green-dark;
+// secondary - used to represent secondary interface elements for a user
+$color-secondary: $secondary-blue;
+$color-secondary-light: $secondary-blue-light;
+$color-secondary-dark: $secondary-blue-dark;
+// danger - used to represent interface elements that the user should be careful of
+$color-danger: $danger-red;
+$color-danger-light: $danger-red-light;
+$color-danger-dark: $danger-red-dark;
+// COLOR INTENTIONS END
+
+// SCALES
+$type-scale: (
+  small: (
+    font-size: 18,
+    line-height: 28
+  ),
+  medium: (
+    font-size: 20,
+    line-height: 32
+  ),
+  large: (
+    font-size: 24,
+    line-height: 42
+  )
+);
+
+$heading-type-scale: (
+  h1: (
+    font-size: 52,
+    line-height: 93.6
+  ),
+  h2: (
+    font-size: 38,
+    line-height: 68.4
+  ),
+  h3: (
+    font-size: 28,
+    line-height: 50.4
+  ),
+  h4: (
+    font-size: 24,
+    line-height: 43.2
+  ),
+  h5: (
+    font-size: 20,
+    line-height: 32
+  ),
+  h6: (
+    font-size: 18,
+    line-height: 28
+  )
+);
+
+$input-size: (
+  xsmall: (
+    font-size: 16,
+    line-height: 22,
+    padding-v: 12,
+    padding-h: 15
+  ),
+  small: (
+    font-size: 18,
+    line-height: 25,
+    padding-v: 15,
+    padding-h: 15
+  ),
+  medium: (
+    font-size: 20,
+    line-height: 27,
+    padding-v: 20,
+    padding-h: 20
+  ),
+  large: (
+    font-size: 24,
+    line-height: 33,
+    padding-v: 20,
+    padding-h: 20
+  )
+);
+// SCALES END

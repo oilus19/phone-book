@@ -1,0 +1,35 @@
+/*
+Text Input
+
+HTML Markup:
+<input type="text" class="input" placeholder="Joh" />
+
+Styleguide input
+ */
+.input {
+  @include input;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  @include input-placeholder;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  @include input-placeholder;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  @include input-placeholder;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  @include input-placeholder;
+}
+
+::placeholder {
+  @include input-placeholder;
+}

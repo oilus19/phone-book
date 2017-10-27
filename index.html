@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Phone Book</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <div class="nav" id="navigation">
+        <div class="tab">
+          <a class="tab-link" id="js-show-all">Show all Contacts</a>
+        </div>
+        <div class="tab">
+          <a class="tab-link" id="js-search">Search</a>
+        </div>
+        <div class="tab">
+          <a class="tab-link active" id="js-add-new">Add New Contact</a>
+        </div>
+        <div class="expander"></div>
+      </div>
+      <div class="content">
+        <div id="show-panel" style="display: none;">
+        </div>
+        <div id="search-panel" style="display: none;">
+          <h2>Search Contacts</h2>
+          <form id="search" action="#">
+            <div id="results">
+            </div>
+            <div>
+              <label>
+                <input type="text" name="search" class="input" id="search" placeholder="Enter name of contact" />
+              </label>
+            </div>
+            <input type="submit" class="button" value="Submit" />
+          </form>
+        </div>
+        <div id="contact-panel">
+          <form id="contact" action="#">
+            <h2>Add a new contact</h2>
+            <div>
+              <label>
+                <input type="text" name="person" id="name" class="input" placeholder="John Smith" />
+              </label>
+              <label>
+                <input type="text" name="phone" id="name" class="input" placeholder="02-234-9182" />
+              </label>
+              <label>
+                <input type="text" name="email" id="name" class="input" placeholder="john@example.com" />
+              </label>
+            </div>
+            <div>
+              <input type="submit" class="button" value="Submit" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/phone-book.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>

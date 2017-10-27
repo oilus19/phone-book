@@ -1,0 +1,12 @@
+/*
+Button
+
+HTML Markup:
+<a class="button">Primary Button</a>
+
+Styleguide button
+ */
+
+.button {
+  @include button;
+}
